@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html" charset="utf-8">
+    <script type="text/javascript" charset="utf-8">
+        function pageLoaded() {
+            // get a handle to the canvas context
+            var canvas = document.getElementById("the_canvas");
+
+            // get 2D context for this canvas
+            var context = canvas.getContext("2d");
+
+            // rectangle
+            context.fillRect(180, 40, 200, 100);
+
+            // square
+            context.fillRect(500, 40, 100, 100);
+
+            // circle
+            context.beginPath();
+            context.arc(100, 300, 50, 0, Math.PI * 2, true);
+            context.fill();
+            context.stroke();
+
+            // filled triangle
+            context.beginPath();
+            context.moveTo(50, 50);
+            context.lineTo(120, 50);
+            context.lineTo(50, 120);
+            context.fill();
+
+            // non-filled triangle
+            context.beginPath();
+            context.moveTo(125, 125);
+            context.lineTo(125, 45);
+            context.lineTo(45, 125);
+            context.closePath();
+            context.stroke();
+
+            // oval
+            context.beginPath();
+            context.ellipse(300, 300, 30, 60, Math.PI / 4, 0, 2 * Math.PI);
+            context.fill();
+            context.stroke();
+
+            // hexagon
+            context.beginPath();
+            context.moveTo(100, 400);
+            context.lineTo(150, 400);
+            context.lineTo(180, 450);
+            context.lineTo(150, 500);
+            context.lineTo(100, 500);
+            context.lineTo(70, 450);
+            context.fill();
+            context.stroke();
+
+            // diamond
+            context.beginPath();
+            context.moveTo(550, 500);
+            context.lineTo(550, 500);
+            context.lineTo(500, 450);
+            context.lineTo(450, 500);
+            context.lineTo(500, 550);
+            context.fill();
+            context.stroke();
+
+            // pentagon
+            context.beginPath();
+            context.moveTo(650, 400);
+            context.lineTo(700, 425);
+            context.lineTo(675, 450);
+            context.lineTo(625, 450);
+            context.lineTo(600, 425);
+            context.fill();
+            context.stroke();
+        }
+    </script>
+</head>
+<body onload="pageLoaded()">
+    <canvas id="the_canvas" width="800" height="600" style="border: black 1px solid;">
+        Oops! looks like your browser does not support canvas tag
+    </canvas>
+</body>
+</html>
